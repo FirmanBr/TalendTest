@@ -1,0 +1,27 @@
+name: Talend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Install Talend
+      run: |
+        choco install talend-open-studio
+        refreshenv
+
+    - name: Unzip Talend Job
+      run: |
+        Expand-Archive -Path TalendTesting/TalendTesting.zip -DestinationPath TalendJob
+      
+    - name: Run Talend Job
+      run: |
+        TalendJob/TalendTesting_run.bat
