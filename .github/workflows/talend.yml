@@ -12,11 +12,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      
-    - name: Install Talend
-      run: |
-        choco install talend-open-studio
-        refreshenv
 
     - name: Unzip Talend Job
       run: |
