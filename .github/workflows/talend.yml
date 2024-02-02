@@ -15,7 +15,7 @@ jobs:
 
     - name: Unzip Talend Job
       run: |
-        Expand-Archive -Path TalendTesting/TalendTesting.zip -DestinationPath TalendTesting
+        Expand-Archive -Path TalendTesting.zip -DestinationPath TalendTesting
       
     - name: Run Talend Job
       run: |
