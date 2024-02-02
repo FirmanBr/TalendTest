@@ -19,4 +19,5 @@ jobs:
       
     - name: Run Talend Job
       run: |
-        TalendTesting/TalendTesting_run.bat
+        cd TalendTesting
+        TalendTesting_run.bat
