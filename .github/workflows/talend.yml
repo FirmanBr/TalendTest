@@ -20,4 +20,4 @@ jobs:
     - name: Run Talend Job
       run: |
         cd TalendTesting
-        call TalendTesting_run.bat
+        .\TalendTesting_run.bat
