@@ -19,9 +19,12 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+    - name: Create Firman Directory
+      run: mkdir /usr/firman
+    
     - name: Move CSV file to TalendTesting directory
       run: |
-        mv TalendLinux/data/tenaga_kesejahteraan.csv /usr/bin/
+        mv TalendLinux/data/tenaga_kesejahteraan.csv /usr/firman
       
     - name: Set execute permission for TalendTesting_run.sh
       run: |
