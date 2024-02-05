@@ -7,21 +7,21 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      
+
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adopt'  
+        distribution: 'adopt'
       
     - name: Run Talend Job
       run: |
-        cd Talend
+        cd \TalendLinux
         cd TalendTesting
-        TalendTesting_run.bat
+        TalendTesting_run.sh
         
