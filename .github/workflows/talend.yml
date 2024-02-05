@@ -18,13 +18,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'  
-
-    - name: Unzip Talend Job
-      run: |
-        Expand-Archive -Path TalendTesting.zip -DestinationPath TalendTesting
       
     - name: Run Talend Job
       run: |
+        cd Talend
         cd TalendTesting
         TalendTesting_run.bat
         
