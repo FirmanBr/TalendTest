@@ -26,8 +26,17 @@ jobs:
     
     - name: Move CSV file to TalendTesting directory
       run: |
-        sudo mv tenaga_kesejahteraan.csv /usr/firman/       
-        locate tenaga_kesejahteraan.csv
+        sudo mv tenaga_kesejahteraan.csv /usr/firman/ 
+        
+    - name: Search CSV File
+      run: |
+        csv_file=$(find . -type f -name "tenaga_kesejahteraan.csv")
+        if [ -n "$csv_file" ]; then
+          echo "File tenaga_kesejahteraan.csv ditemukan: $csv_file"
+        else
+          echo "File tenaga_kesejahteraan.csv tidak ditemukan."
+          exit 1
+        fi
 
       
     - name: Set execute permission for TalendTesting_run.sh
