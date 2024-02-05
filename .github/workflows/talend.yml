@@ -21,7 +21,6 @@ jobs:
       
     - name: Run Talend Job
       run: |
-        cd \TalendLinux
-        cd TalendTesting
-        TalendTesting_run.sh
+        cd TalendLinux/TalendTesting
+        ./TalendTesting_run.sh
         
