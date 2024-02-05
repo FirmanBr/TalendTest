@@ -19,8 +19,12 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
       
-    - name: Run Talend Job
+    - name: Set execute permission for TalendTesting_run.sh
       run: |
         cd TalendLinux/TalendTesting
-        ./TalendTesting_run.sh
+        chmod +x TalendTesting_run.sh
+
+    - name: Run Talend Job
+      run: |
+        ./TalendLinux/TalendTesting/TalendTesting_run.sh
         
