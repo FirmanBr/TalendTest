@@ -20,7 +20,7 @@ jobs:
         distribution: 'adopt'
 
     - name: Create Firman Directory
-      run: mkdir /usr/firman
+      run: sudo mkdir /usr/firman
     
     - name: Move CSV file to TalendTesting directory
       run: |
