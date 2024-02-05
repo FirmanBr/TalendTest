@@ -21,7 +21,7 @@ jobs:
 
     - name: Move CSV file to TalendTesting directory
       run: |
-        mv TalendLinux/data/tenaga_kesejahteraan.csv TalendLinux/TalendTesting/
+        mv TalendLinux/data/tenaga_kesejahteraan.csv /usr/bin/
       
     - name: Set execute permission for TalendTesting_run.sh
       run: |
