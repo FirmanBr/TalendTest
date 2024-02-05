@@ -26,7 +26,9 @@ jobs:
     
     - name: Move CSV file to TalendTesting directory
       run: |
-        sudo mv tenaga_kesejahteraan.csv /usr/firman/
+        sudo mv tenaga_kesejahteraan.csv /usr/firman/       
+        locate tenaga_kesejahteraan.csv
+
       
     - name: Set execute permission for TalendTesting_run.sh
       run: |
