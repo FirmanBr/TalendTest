@@ -1,0 +1,50 @@
+name: Talend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Create Firman Directory
+      run: sudo mkdir /usr/firman
+    
+    - name: Move CSV file to TalendTesting directory
+      run: |
+        sudo mv tenaga_kesejahteraan.csv /usr/firman/ 
+        
+    - name: Search CSV File
+      run: |
+        csv_file=$(find . -type f -name "tenaga_kesejahteraan.csv")
+        if [ -n "$csv_file" ]; then
+          echo "File tenaga_kesejahteraan.csv ditemukan: $csv_file"
+        else
+          echo "File tenaga_kesejahteraan.csv tidak ditemukan."
+          exit 1
+        fi
+
+      
+    - name: Set execute permission for TalendTesting_run.sh
+      run: |
+        cd TalendLinux/TalendTesting
+        chmod +x TalendTesting_run.sh
+
+    - name: Run Talend Job
+      run: |
+        ./TalendLinux/TalendTesting/TalendTesting_run.sh
+        
