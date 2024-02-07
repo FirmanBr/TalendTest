@@ -38,13 +38,19 @@ jobs:
           exit 1
         fi
 
-      
     - name: Set execute permission for TalendTesting_run.sh
       run: |
         cd TalendLinux/TalendTesting
         chmod +x TalendTesting_run.sh
 
+    - name: Run Unit Tests
+      run: |
+        # Execute unit tests here
+        
+    - name: Run Integration Tests
+      run: |
+        # Execute integration tests here
+
     - name: Run Talend Job
       run: |
         ./TalendLinux/TalendTesting/TalendTesting_run.sh
-        
