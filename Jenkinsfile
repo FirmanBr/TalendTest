@@ -10,20 +10,7 @@ pipeline {
             }
         }
 
-        stage('Set up Java') {
-            steps {
-                script {
-                    // Configure Java tool
-                    def javaTool = tool name: 'Java11', type: 'jdk'
-                    if (javaTool == null) {
-                        error "Java11 JDK not found. Please configure it in Jenkins."
-                    } else {
-                        env.JAVA_HOME = javaTool
-                        sh '${JAVA_HOME}/bin/java -version'
-                    }
-                }
-            }
-        }
+ 
 
         stage('Create Firman Directory') {
             steps {
